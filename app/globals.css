@@ -25,6 +25,8 @@
 
 :root {
   color-scheme: dark;
+  --font-geist-sans: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --background: #090a12;
   --foreground: #f4f2ed;
   --card: #10111b;
