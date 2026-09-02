@@ -1,3 +1,5 @@
+import { ScrollReveal } from '@/components/scroll-reveal';
+
 const roleTags = ['JAVA BACKEND', 'AGENT ENGINEERING', 'FULL-STACK'];
 
 const capabilities = [
@@ -30,6 +32,7 @@ const capabilities = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <ScrollReveal />
       <header className="site-shell relative z-20 flex h-20 items-center justify-between border-b border-white/10">
         <a href="#top" className="font-mono text-sm font-semibold tracking-[0.18em]">
           WWC<span className="text-primary">/</span>DEV
@@ -44,7 +47,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            <span className="font-mono text-[10px]">GH</span>
+            <span className="font-mono text-[11px]">GH</span>
             GitHub
           </a>
         </nav>
@@ -53,14 +56,14 @@ export default function Home() {
       <section id="top" className="hero-grid relative border-b border-white/10">
         <div className="hero-glow" aria-hidden="true" />
         <div className="site-shell relative z-10 grid min-h-[calc(100vh-5rem)] content-between py-10 lg:py-14">
-          <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.16em] text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[13px] tracking-[0.16em] text-muted-foreground">
             <div className="flex items-center gap-2">
               <span className="status-dot" /> OPEN TO OPPORTUNITIES
             </div>
-            <span>NANJING · CHINA / 2026</span>
+            <span>CHINA / 2026</span>
           </div>
 
-          <div className="py-16 lg:py-20">
+          <div className="py-16 lg:py-20" data-reveal="up">
             <div className="mb-8 flex flex-wrap gap-2">
               {roleTags.map((tag, index) => (
                 <span key={tag} className="role-chip">0{index + 1} / {tag}</span>
@@ -87,7 +90,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 border-t border-white/10 pt-5 text-center sm:text-left">
+          <div className="grid grid-cols-3 border-t border-white/10 pt-5 text-center sm:text-left" data-reveal="up">
             <Metric value="03" label="FOCUS PROJECTS" />
             <Metric value="246" label="AUTOMATED TESTS" />
             <Metric value="∞" label="ITERATION MINDSET" />
@@ -100,14 +103,13 @@ export default function Home() {
           index="01"
           eyebrow="SELECTED WORK"
           title="把能力落在作品里。"
-          copy="三个项目分别回答三个问题：如何构建可靠的交易系统，如何让多 Agent 结果真正可交付，以及如何把真实数据、规划与验证串成产品闭环。"
         />
 
-        <article className="project-card project-card-featured">
+        <article className="project-card project-card-featured" data-reveal="up">
           <div className="project-copy">
             <ProjectMeta index="01" period="2026 — NOW" />
             <div>
-              <p className="mb-3 font-mono text-xs tracking-[0.16em] text-primary">QUANT RESEARCH · AGENT WORKSPACE</p>
+              <p className="mb-3 font-mono text-[13px] tracking-[0.16em] text-primary">QUANT RESEARCH · AGENT WORKSPACE</p>
               <h3 className="text-5xl font-semibold tracking-[-0.05em] sm:text-7xl">PrismX</h3>
               <p className="mt-6 max-w-xl text-base leading-7 text-white/68">
                 面向策略研究与投研日报的量化投研 AI 工作台。围绕用户提问、Agent 规划、真实数据取数、工作空间生成、自动验证与修复构建闭环。
@@ -118,32 +120,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="prism-panel" aria-label="PrismX 能力概览">
-            <div className="panel-topline">
-              <span>PRISMX / LIVE WORKSPACE</span>
-              <span className="flex items-center gap-2 text-primary"><span className="status-dot" /> SYSTEM READY</span>
-            </div>
-            <div className="signal-field">
-              <div className="signal-orbit orbit-a" />
-              <div className="signal-orbit orbit-b" />
-              <div className="signal-core">PX</div>
-              <span className="signal-label label-a">MARKET DATA</span>
-              <span className="signal-label label-b">RUN PLAN</span>
-              <span className="signal-label label-c">AUTO REPAIR</span>
-            </div>
-            <div className="grid grid-cols-3 gap-px bg-white/10">
-              <PanelStat value="08" label="DATA DOMAINS" />
-              <PanelStat value="24/7" label="OBSERVABILITY" />
-              <PanelStat value="TRACE" label="EVALUATION" />
-            </div>
-          </div>
+          <figure className="prism-image-wrap">
+            <img
+              src="/PrismX.png"
+              alt="PrismX 量化投研 AI 工作台产品首页"
+              className="prism-project-image"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
         </article>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
-          <article className="project-card-small travel-card">
+          <article className="project-card-small travel-card" data-reveal="left" data-reveal-delay="0">
             <ProjectMeta index="02" period="2026.01 — 03" />
             <div>
-              <p className="mb-3 font-mono text-[10px] tracking-[0.14em] text-[#a995ff]">MULTI-AGENT · ARTIFACT-FIRST</p>
+              <p className="mb-3 font-mono text-[12px] tracking-[0.14em] text-[#a995ff]">MULTI-AGENT · ARTIFACT-FIRST</p>
               <h3 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">AI 旅游规划系统</h3>
               <p className="mt-5 text-sm leading-7 text-white/66">
                 以 Supervisor、SubAgents 与 Skills 拆解信息搜集、路线规划、预算测算和风险校验，并将结构化结果渲染成可直接浏览与分享的 HTML 旅行方案。
@@ -162,10 +154,10 @@ export default function Home() {
             <span className="card-corner" aria-hidden="true">↗</span>
           </article>
 
-          <article className="project-card-small commerce-card">
+          <article className="project-card-small commerce-card" data-reveal="right" data-reveal-delay="1">
             <ProjectMeta index="03" period="2025.08 — 12" />
             <div>
-              <p className="mb-3 font-mono text-[10px] tracking-[0.14em] text-[#ff9e55]">DISTRIBUTED COMMERCE · JAVA</p>
+              <p className="mb-3 font-mono text-[12px] tracking-[0.14em] text-[#ff9e55]">DISTRIBUTED COMMERCE · JAVA</p>
               <h3 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">ART-X 数字藏品</h3>
               <p className="mt-5 text-sm leading-7 text-white/66">
                 覆盖网关、用户、交易和订单核心模块，以多级缓存、事务消息、分库分表和定时任务支撑从展示、下单支付到上链的完整售卖闭环。
@@ -196,10 +188,10 @@ export default function Home() {
 
           <div className="capability-grid">
             {capabilities.map((item) => (
-              <article key={item.index} className="capability-card">
+              <article key={item.index} className="capability-card" data-reveal="up" data-reveal-delay={item.index}>
                 <span className="capability-index">{item.index}</span>
                 <div>
-                  <p className="mb-2 font-mono text-[10px] tracking-[0.14em] text-primary">{item.subtitle}</p>
+                  <p className="mb-2 font-mono text-[12px] tracking-[0.14em] text-primary">{item.subtitle}</p>
                   <h3 className="text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">{item.title}</h3>
                   <p className="mt-5 text-sm leading-7 text-white/62">{item.description}</p>
                 </div>
@@ -210,21 +202,15 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="proof-strip">
-            <div><strong>183</strong><span>BACKEND PYTEST</span></div>
-            <div><strong>63</strong><span>FRONTEND VITEST</span></div>
-            <div><strong>SSE</strong><span>STREAMING CONTRACT</span></div>
-            <div><strong>TRACE</strong><span>OBSERVABLE RUNS</span></div>
-          </div>
         </div>
       </section>
 
       <section id="contact" className="contact-grid relative overflow-hidden py-24 lg:py-36">
         <div className="contact-glow" aria-hidden="true" />
         <div className="site-shell relative z-10">
-          <p className="section-kicker">03 / CONTACT</p>
+          <p className="section-kicker" data-reveal="up">03 / CONTACT</p>
           <div className="grid gap-12 lg:grid-cols-[1.45fr_0.55fr] lg:items-end">
-            <div>
+            <div data-reveal="left">
               <h2 className="max-w-5xl text-[clamp(3rem,8vw,8rem)] font-semibold leading-[0.88] tracking-[-0.065em]">
                 LET&apos;S BUILD<br /><span className="text-stroke">SOMETHING REAL.</span>
               </h2>
@@ -233,14 +219,14 @@ export default function Home() {
               </p>
             </div>
 
-            <address className="not-italic">
+            <address className="not-italic" data-reveal="right" data-reveal-delay="1">
               <ContactLink label="EMAIL" value="1468345176@qq.com" href="mailto:1468345176@qq.com" />
               <ContactLink label="PHONE" value="151 8995 9921" href="tel:15189959921" />
               <ContactLink label="GITHUB" value="@WEIWEICurry" href="https://github.com/WEIWEICurry" external />
             </address>
           </div>
 
-          <footer className="mt-24 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 font-mono text-[10px] tracking-[0.12em] text-muted-foreground sm:flex-row">
+          <footer className="mt-24 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 font-mono text-[12px] tracking-[0.12em] text-muted-foreground sm:flex-row" data-reveal="up">
             <span>© 2026 QIAN SEN / WEIWEICURRY</span>
             <span>DESIGNED AROUND SYSTEMS, BUILT FOR PEOPLE.</span>
           </footer>
@@ -250,14 +236,14 @@ export default function Home() {
   );
 }
 
-function SectionHeading({ index, eyebrow, title, copy }: { index: string; eyebrow: string; title: string; copy: string }) {
+function SectionHeading({ index, eyebrow, title, copy }: { index: string; eyebrow: string; title: string; copy?: string }) {
   return (
-    <div className="mb-14 flex flex-col justify-between gap-6 border-b border-white/10 pb-8 sm:flex-row sm:items-end">
+    <div className="mb-14 flex flex-col justify-between gap-6 border-b border-white/10 pb-8 sm:flex-row sm:items-end" data-reveal="up">
       <div>
         <p className="section-kicker">{index} / {eyebrow}</p>
         <h2 className="section-title">{title}</h2>
       </div>
-      <p className="max-w-md text-sm leading-6 text-muted-foreground">{copy}</p>
+      {copy ? <p className="max-w-md text-base leading-7 text-muted-foreground">{copy}</p> : null}
     </div>
   );
 }
@@ -266,7 +252,7 @@ function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div className="border-l border-white/10 px-3 first:border-l-0 first:pl-0 sm:px-6">
       <strong className="block text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{value}</strong>
-      <span className="mt-1 block font-mono text-[9px] tracking-[0.12em] text-muted-foreground sm:text-[10px]">{label}</span>
+      <span className="mt-1 block font-mono text-[11px] tracking-[0.12em] text-muted-foreground sm:text-[12px]">{label}</span>
     </div>
   );
 }
@@ -282,15 +268,6 @@ function ProjectMeta({ index, period }: { index: string; period: string }) {
 
 function TechPill({ children }: { children: React.ReactNode }) {
   return <span className="tech-pill">{children}</span>;
-}
-
-function PanelStat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="bg-[#10111b] p-4 sm:p-5">
-      <strong className="block font-mono text-base text-white">{value}</strong>
-      <span className="mt-1 block font-mono text-[9px] tracking-[0.1em] text-muted-foreground">{label}</span>
-    </div>
-  );
 }
 
 function ContactLink({ label, value, href, external = false }: { label: string; value: string; href: string; external?: boolean }) {
